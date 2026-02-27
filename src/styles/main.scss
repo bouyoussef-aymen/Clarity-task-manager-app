@@ -1,0 +1,177 @@
+$bg-color: #121212;
+$card-bg: #1e1e1e;
+$text-primary: #ffffff; 
+$text-secondary: #aaaaaa;
+$done-color: #555555;
+$hover-bg: #2a2a2a;  
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: $bg-color;
+  padding: 2rem;
+  color: $text-primary;
+}
+
+.layout {
+  display: flex;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  width: 240px;
+  background: $card-bg;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: fit-content;
+}
+
+.sidebar h2 {
+  font-size: 1.2rem;
+  color: $text-primary;
+}
+
+.sidebar-filter {
+  padding: 0.5rem 0.8rem;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  color: $text-primary;
+  transition: background 0.2s;
+
+  &.active {
+    background: $text-primary;
+    color: $bg-color;
+  }
+
+  &:hover {
+    background: $hover-bg;
+  }
+}
+
+.sidebar-stats {
+  font-size: 0.9rem;
+  color: $text-secondary;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.clear-btn {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #b00020;
+  color: $text-primary;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.main-content {
+  flex: 1;
+}
+
+header h1 {
+  margin-bottom: 1.5rem;
+  color: $text-primary;
+}
+
+.input-form {
+  background: $card-bg;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.2rem;
+  transition: background 0.2s;
+  margin-bottom: 0.4rem; 
+
+  &:hover {
+    background: $hover-bg;
+  }
+
+  .input-field {
+    flex: 1;
+    padding: 0.6rem 0.9rem;
+    background: $bg-color;
+    border: none;
+    color: $text-primary;
+    font-size: 0.95rem;
+
+    &::placeholder {
+      color: $text-secondary;
+    }
+
+    &:focus {
+      outline: 2px solid $text-primary;
+      outline-offset: 1px;
+    }
+  }
+
+  .add-btn {
+    padding: 0.6rem 1rem;
+    background: $text-primary;
+    color: $bg-color;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0; 
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: $card-bg;
+  padding: 0.75rem 1rem;
+  transition: background 0.2s;
+  border-bottom: 1px solid #2a2a2a;
+
+  &:hover {
+    background: $hover-bg;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &.done {
+    span {
+      text-decoration: line-through;
+      color: $done-color;
+    }
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+  }
+
+  span {
+    font-size: 0.95rem;
+    color: $text-primary;
+  }
+}
